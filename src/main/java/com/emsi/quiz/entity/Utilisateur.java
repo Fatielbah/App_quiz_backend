@@ -1,4 +1,4 @@
-package com.emsi.entity;
+package com.emsi.quiz.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

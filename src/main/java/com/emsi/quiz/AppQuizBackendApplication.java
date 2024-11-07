@@ -1,11 +1,11 @@
-package com.emsi.App_quiz_backend;
+package com.emsi.quiz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan(basePackages = "com.emsi.entity")
+@EntityScan(basePackages = "com.emsi.quiz.entity")
 public class AppQuizBackendApplication {
 
 	public static void main(String[] args) {

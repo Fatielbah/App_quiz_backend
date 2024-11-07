@@ -1,26 +1,30 @@
-package com.emsi.entity;
+package com.emsi.quiz.entity;
+
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+
 @Setter
 @Getter
 @Entity
-public class Rapport {
+public class Participation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String resultats;
-    private String analyse;
+    private int score;
+    private int temps;
 
-    @OneToOne(mappedBy = "rapport")
-    private Quiz quiz;
-
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
-}
 
+    @ManyToOne
+    @JoinColumn(name = "quiz_id")
+    private Quiz quiz;
+
+    
+}

@@ -1,8 +1,9 @@
-package com.emsi.repository;
+package com.emsi.quiz.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.emsi.entity.Notification;
+import com.emsi.quiz.entity.Notification;
+
 
 
 

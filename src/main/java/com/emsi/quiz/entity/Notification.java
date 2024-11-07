@@ -1,30 +1,26 @@
-package com.emsi.entity;
-
+package com.emsi.quiz.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @Entity
-public class Participation {
+public class Notification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int score;
-    private int temps;
+    private String type;
+    private String message;
+    private LocalDateTime date;
+    private Etat etat;
 
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
-
-    @ManyToOne
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
-
-    
 }
