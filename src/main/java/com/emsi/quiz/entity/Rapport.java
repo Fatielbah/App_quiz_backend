@@ -16,10 +16,11 @@ public class Rapport {
     private String resultats;
     private String analyse;
 
-    @OneToOne(mappedBy = "rapport")
+    @ManyToOne
+    @JoinColumn(name = "quiz_id")
     private Quiz quiz;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
 }

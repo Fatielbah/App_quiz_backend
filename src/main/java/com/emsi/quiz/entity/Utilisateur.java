@@ -1,13 +1,17 @@
 package com.emsi.quiz.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Utilisateur {
 
     @Id
@@ -29,14 +33,16 @@ public class Utilisateur {
     )
     private List<Groupe> groupes;
 
-    @OneToMany(mappedBy = "utilisateur")
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     private List<Participation> participations;
-
-   
+ 
     @OneToOne(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     private Rapport rapport;
     
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
     private List<Notification> notifications;
+    
+    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+    private List<Classement> classements;
 
 }

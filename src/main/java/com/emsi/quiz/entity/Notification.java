@@ -14,13 +14,14 @@ public class Notification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String type;
+    private String typeNotification;
     private String message;
-    private LocalDateTime date;
-    private Etat etat;
-
+    private LocalDateTime dateEnvoi;
+    private boolean estVue;
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
     private Utilisateur utilisateur;
+    @ManyToOne
+    @JoinColumn(name = "quiz_id", nullable = true)
+    private Quiz quiz;
 }

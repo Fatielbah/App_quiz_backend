@@ -1,6 +1,8 @@
 package com.emsi.quiz.entity;
 
 
+import java.util.Date;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +18,8 @@ public class Participation {
     private Long id;
 
     private int score;
-    private int temps;
+    private int tempsPris;
+    private Date dateParticipation;
 
     @ManyToOne
     @JoinColumn(name = "utilisateur_id")
